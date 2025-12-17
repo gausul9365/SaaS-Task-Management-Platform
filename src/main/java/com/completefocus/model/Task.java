@@ -36,4 +36,9 @@ public class Task {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    // Link to a goal (optional)
+    @ManyToOne
+    @JoinColumn(name = "goal_id")
+    private Goal goal;
 }

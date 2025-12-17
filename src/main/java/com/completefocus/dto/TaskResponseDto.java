@@ -14,4 +14,5 @@ public class TaskResponseDto {
     private String createdAt;
     private Status status;
     private String userName;
+    private Long goalId; // Optional
 }

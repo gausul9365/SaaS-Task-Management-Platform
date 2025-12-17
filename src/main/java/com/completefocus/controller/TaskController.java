@@ -2,6 +2,7 @@ package com.completefocus.controller;
 
 import com.completefocus.dto.*;
 import com.completefocus.service.TaskService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public TaskResponseDto create(@RequestBody TaskDto dto) {
+    public TaskResponseDto create(@Valid @RequestBody TaskDto dto) {
         return service.createTask(dto);
     }
 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; }
+        h2 { color: #117A65; }
+        .summary {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        .highlight {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<h2> Weekly Summary Report</h2>
+<p>Hello <b>[[${userName}]]</b>,</p>
+<p>Here’s your progress for the week ending <b>[[${date}]]</b>:</p>
+
+<div class="summary">
+    <p>✅ Goals set: <span class="highlight">[[${goalsSet}]]</span></p>
+    <p>🏆 Goals completed: <span class="highlight">[[${goalsCompleted}]]</span></p>
+    <p>📝 Tasks done: <span class="highlight">[[${tasksDone}]]</span></p>
+    <p>⏳ Total time spent: <span class="highlight">[[${timeSpent}]] mins</span></p>
+</div>
+
+<p>Keep up the consistency 🔥 — remember, weekly progress compounds into big wins.</p>
+
+<div class="footer">
+    <p>- CompleteFocus Team</p>
+</div>
+</body>
+</html>

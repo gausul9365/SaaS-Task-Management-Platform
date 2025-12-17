@@ -1,10 +1,10 @@
 package com.completefocus.mapper;
 
-import com.completefocus.dto.*;
+import com.completefocus.dto.UserDto;
+import com.completefocus.dto.UserResponseDto;
 import com.completefocus.model.User;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class UserMapper {
 
@@ -12,8 +12,8 @@ public class UserMapper {
         User user = new User();
         user.setName(dto.getName());
         user.setEmail(dto.getEmail());
-        user.setRole(dto.getRole());
-        user.setCreatedAt(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        user.setRole(String.valueOf(dto.getRole())); // Direct enum assignment
+        user.setCreatedAt(LocalDateTime.now());
         return user;
     }
 
@@ -22,8 +22,8 @@ public class UserMapper {
                 user.getId(),
                 user.getName(),
                 user.getEmail(),
-                user.getRole(),
-                user.getCreatedAt()
+                user.getRole(), // Direct enum
+                user.getCreatedAt().toString()
         );
     }
 }

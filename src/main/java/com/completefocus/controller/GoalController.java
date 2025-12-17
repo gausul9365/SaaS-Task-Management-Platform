@@ -2,6 +2,7 @@ package com.completefocus.controller;
 
 import com.completefocus.dto.*;
 import com.completefocus.service.GoalService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class GoalController {
     }
 
     @PostMapping
-    public GoalResponseDto create(@RequestBody GoalDto dto) {
+    public GoalResponseDto create(@Valid @RequestBody GoalDto dto) {
         return service.createGoal(dto);
     }
 

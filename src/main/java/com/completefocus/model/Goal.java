@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "goals")
@@ -31,8 +33,12 @@ public class Goal {
         CLOSED
     }
 
-    // Association
+    // Association with User
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    // Association with Tasks
+    @OneToMany(mappedBy = "goal", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Task> tasks = new ArrayList<>();
 }

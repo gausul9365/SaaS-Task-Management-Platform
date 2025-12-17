@@ -12,4 +12,7 @@ public class UserResponseDto {
     private String email;
     private Role role;
     private String createdAt;
+
+    public UserResponseDto(Long id, String name, String email, String role, String string) {
+    }
 }
