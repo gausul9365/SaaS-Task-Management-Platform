@@ -18,7 +18,7 @@ public class EmailController {
         this.emailService = emailService;
     }
 
-    // ---- Existing plain text email endpoint ----
+    // Existing plain text email endpoint
     @PostMapping("/send")
     public String sendMail(
             @RequestParam String to,
@@ -26,13 +26,13 @@ public class EmailController {
             @RequestParam String body) {
         try {
             emailService.sendSimpleMail(to, subject, body);
-            return "✅ Email sent successfully.";
+            return " Email sent successfully.";
         } catch (MessagingException e) {
-            return "❌ Error: " + e.getMessage();
+            return " Error: " + e.getMessage();
         }
     }
 
-    // ---- Updated HTML email endpoint (can send daily OR weekly) ----
+    // Updated HTML email endpoint (can send daily OR weekly) 
     @PostMapping("/send-html")
     public String sendHtmlMail(
             @RequestParam String to,
@@ -52,9 +52,9 @@ public class EmailController {
 
             emailService.sendHtmlMail(to, subject, variables, template);
 
-            return "✅ " + template + " email sent successfully to " + to;
+            return "✔ " + template + " email sent successfully to " + to;
         } catch (MessagingException e) {
-            return "❌ Error: " + e.getMessage();
+            return "X Error: " + e.getMessage();
         }
     }
 }
